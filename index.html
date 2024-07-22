@@ -3,12 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola, mundo!</title>
+    <title>Lista de Canciones</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Estilos para la lista de canciones */
+        #canciones-lista {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #canciones-lista li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #canciones-lista li h2 {
+            margin-top: 0;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 600px) {
+            main {
+                padding: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hola, mundo!</h1>
-    <p>Este es un ejemplo básico de un sitio web estático.</p>
-    <p>Este es un ejemplo básico de un sitio web estático.</p>
-    
+    <header>
+        <h1>Lista de Canciones</h1>
+    </header>
+
+    <main>
+        <ul id="canciones-lista">
+            <li>
+                <h2>Canción 1</h2>
+                <p>Artista: Nombre del Artista</p>
+                <p>Álbum: Nombre del Álbum</p>
+            </li>
+            <li>
+                <h2>Canción 2</h2>
+                <p>Artista: Nombre del Artista</p>
+                <p>Álbum: Nombre del Álbum</p>
+            </li>
+            <!-- Agrega más elementos <li> según necesites -->
+        </ul>
+    </main>
 </body>
 </html>
