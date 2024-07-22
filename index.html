@@ -3,33 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Canciones</title>
+    <title>Canciones Trio Sir</title>
     
     <!-- Enlace a Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Enlace a FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Fondo gris suave */
+            padding-top: 20px;
+        }
+
+        .cancion {
+            background-color: #ffffff; /* Fondo blanco para la ficha de canción */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center; /* Centrar verticalmente los elementos */
+        }
+
+        .disco {
+            width: 60px;
+            height: 60px;
+            background-image: url('vinilo.png'); /* URL de la imagen de disco */
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            border: 2px solid #343a40; /* Borde del disco */
+            margin-right: 20px; /* Espacio a la derecha de la imagen de disco */
+        }
+
+        .info {
+            flex: 1; /* Ocupar todo el espacio restante */
+        }
+
+        h2 {
+            margin-bottom: 5px; /* Espacio inferior pequeño */
+        }
+
+        p {
+            margin: 0; /* Eliminar márgenes del párrafo */
+        }
+
+        /* Estilos adicionales para el buscador */
+        .buscador {
+            margin-bottom: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .buscador .form-control {
+            border-radius: 20px;
+            padding-right: 40px;
+        }
+
+        .buscador .icono-busqueda {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        /* Estilos para la ficha de "Sin coincidencias" */
+        .sin-coincidencias {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <header class="text-center mb-4">
-            <h1>Lista de Canciones</h1>
+            <h1>Canciones Trio Sir</h1>
         </header>
 
-        <main>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <h2 class="mb-1">Canción 1</h2>
-                    <p class="mb-1">Artista: Nombre del Artista 1</p>
-                </li>
-                <li class="list-group-item">
-                    <h2 class="mb-1">Canción 2</h2>
-                    <p class="mb-1">Artista: Nombre del Artista 2</p>
-                </li>
-                <!-- Agrega más elementos <li> según necesites -->
-            </ul>
-        </main>
+        <!-- Buscador -->
+        <div class="mb-3 buscador">
+            <input type="text" class="form-control rounded-end" id="buscarInput" placeholder="Buscar por nombre de canción">
+            <span class="icono-busqueda">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+
+        <!-- Lista de Canciones -->
+        <div class="list-group" id="lista-canciones">
+            <a href="#" class="list-group-item list-group-item-action cancion">
+                <div class="disco"></div>
+                <div class="info">
+                    <h2>Canción A</h2>
+                    <p>Artista: Artista A</p>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action cancion">
+                <div class="disco"></div>
+                <div class="info">
+                    <h2>Canción B</h2>
+                    <p>Artista: Artista B</p>
+                </div>
+            </a>
+            <!-- Agrega más elementos según necesites -->
+        </div>
+
+        <!-- Ficha de "Sin coincidencias" oculta inicialmente -->
+        <div class="sin-coincidencias" id="sinCoincidencias" style="display: none;">
+            <h2>Sin coincidencias</h2>
+            <p>No se encontraron canciones que coincidan con la búsqueda.</p>
+        </div>
     </div>
 
     <!-- Enlace a Bootstrap JS (opcional, solo necesario si utilizas componentes que requieren JS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Función para filtrar las canciones basado en el texto del input
+        document.getElementById('buscarInput').addEventListener('input', function() {
+            let valor = this.value.toLowerCase().trim(); // Obtener el valor del input y limpiar espacios y minúsculas
+
+            // Obtener todas las canciones
+            let canciones = document.querySelectorAll('.cancion');
+            let sinCoincidencias = document.getElementById('sinCoincidencias');
+
+            let encontradas = false; // Variable para controlar si se encontraron coincidencias
+
+            // Iterar sobre cada canción y mostrar/ocultar según el filtro
+            canciones.forEach(function(cancion) {
+                let textoCancion = cancion.querySelector('h2').textContent.toLowerCase(); // Obtener el texto de la canción
+
+                // Mostrar la canción si coincide con el filtro, o ocultarla si no coincide
+                if (textoCancion.includes(valor)) {
+                    cancion.style.display = 'block';
+                    encontradas = true;
+                } else {
+                    cancion.style.display = 'none';
+                }
+            });
+
+            // Mostrar la ficha de "Sin coincidencias" si no se encontraron coincidencias
+            if (!encontradas) {
+                sinCoincidencias.style.display = 'block';
+            } else {
+                sinCoincidencias.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
