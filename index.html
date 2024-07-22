@@ -38,6 +38,7 @@
             border-radius: 50%;
             border: 2px solid #343a40; /* Borde del disco */
             margin-right: 20px; /* Espacio a la derecha de la imagen de disco */
+            flex-shrink: 0; /* Evitar que la imagen del disco se encoja */
         }
 
         .info {
@@ -97,183 +98,32 @@
                 <i class="fas fa-search"></i>
             </span>
         </div>
- <!-- Lista de Canciones -->
+
+        <!-- Lista de Canciones -->
         <div class="list-group" id="lista-canciones">
             <a href="#" class="list-group-item list-group-item-action cancion">
                 <div class="disco"></div>
                 <div class="info">
-                    <h2>A MI MANERA</h2>
-                    <p>ARTISTA: DESCONOCIDO</p>
+                    <h2>Canción A</h2>
+                    <p>Artista: Artista A</p>
                 </div>
             </a>
             <a href="#" class="list-group-item list-group-item-action cancion">
                 <div class="disco"></div>
                 <div class="info">
-                    <h2>A LA ORILLA DE UN PALMAR</h2>
-                    <p>ARTISTA: MANUEL M PONCE</p>
+                    <h2>Canción B</h2>
+                    <p>Artista: Artista B</p>
                 </div>
             </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>A LOS CUATRO VIENTOS</h2>
-                    <p>ARTISTA: TOMAS MENDEZ</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>A MEDIAS DE LA NOCHE</h2>
-                    <p>ARTISTA: ANTONIO COSTA</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>A PESAR DE TODO</h2>
-                    <p>ARTISTA: NELSON NED</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>AMEMONOS</h2>
-                    <p>ARTISTA: DESCONOCIDO</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>AMOR MIO</h2>
-                    <p>ARTISTA: ALVARO CARRILLO</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>AMADA AMANTE</h2>
-                    <p>ARTISTA: ROBERTO CARLOS</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ADIOS</h2>
-                    <p>ARTISTA: A CARRASCO</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>AMOR QUE MALO ERES</h2>
-                    <p>ARTISTA: LUIS MARQUETTI</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ARRANCAME LA VIDA</h2>
-                    <p>ARTISTA: AGUSTIN LARA</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ABURRIDO</h2>
-                    <p>ARTISTA: JOAQUIN PARDABE</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ACAPULQUEÑA</h2>
-                    <p>ARTISTA: AGUSTIN RAMIREZ</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ADELANTE</h2>
-                    <p>ARTISTA: MARIO DE JESUS</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ADORO</h2>
-                    <p>ARTISTA: ARMANDO MANZANERO</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>AHORA Y SIMPRE</h2>
-                    <p>ARTISTA: JOSE MORALES</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALBRICIAS</h2>
-                    <p>ARTISTA: CLAUDIA ESTRADA</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALBUR DE AMOR</h2>
-                    <p>ARTISTA: ESPERANZA OTEO</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALBUR</h2>
-                    <p>ARTISTA: PACO TREVIÑO</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALEJANDRA</h2>
-                    <p>ARTISTA: M Y L DE LA MORA</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALMA CORAZON Y VIDA</h2>
-                    <p>ARTISTA: ADRIAN FLORES</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALMA DE CRISTAL</h2>
-                    <p>ARTISTA: GUICHO CISNEROS</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALMA LLANERA</h2>
-                    <p>ARTISTA: PEDRO E GUTIERREZ</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>ALMA MIA</h2>
-                    <p>ARTISTA: PEDRO E GUTIERREZ</p>
-                </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action cancion">
-                <div class="disco"></div>
-                <div class="info">
-                    <h2>AMANECI EN TUS BRAZOS</h2>
-                    <p>ARTISTA: DESCONOCIDO</p>
-                </div>
-            </a>
+            <!-- Agrega más elementos según necesites -->
+        </div>
+
+        <!-- Ficha de "Sin coincidencias" oculta inicialmente -->
+        <div class="sin-coincidencias" id="sinCoincidencias" style="display: none;">
+            <h2>Sin coincidencias</h2>
+            <p>No se encontraron canciones que coincidan con la búsqueda.</p>
+        </div>
+    </div>
 
     <!-- Enlace a Bootstrap JS (opcional, solo necesario si utilizas componentes que requieren JS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
